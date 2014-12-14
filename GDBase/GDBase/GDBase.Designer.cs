@@ -32,15 +32,15 @@
             this.columnGame = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnSystem = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnYear = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.buttonSearch = new System.Windows.Forms.Button();
             this.textBoxSearch = new System.Windows.Forms.TextBox();
             this.pictureBoxCoverArt = new System.Windows.Forms.PictureBox();
             this.comboBoxSystem = new System.Windows.Forms.ComboBox();
             this.menuStripMain = new System.Windows.Forms.MenuStrip();
             this.menuItemFile = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuItemExit = new System.Windows.Forms.ToolStripMenuItem();
             this.buttonManageCollection = new System.Windows.Forms.Button();
             this.labelSystem = new System.Windows.Forms.Label();
-            this.menuItemExit = new System.Windows.Forms.ToolStripMenuItem();
+            this.labelSearch = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewItems)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCoverArt)).BeginInit();
             this.menuStripMain.SuspendLayout();
@@ -89,27 +89,19 @@
             this.columnYear.ReadOnly = true;
             this.columnYear.ToolTipText = "Year";
             // 
-            // buttonSearch
-            // 
-            this.buttonSearch.Location = new System.Drawing.Point(178, 45);
-            this.buttonSearch.Name = "buttonSearch";
-            this.buttonSearch.Size = new System.Drawing.Size(75, 23);
-            this.buttonSearch.TabIndex = 1;
-            this.buttonSearch.Text = "Search";
-            this.buttonSearch.UseVisualStyleBackColor = true;
-            // 
             // textBoxSearch
             // 
-            this.textBoxSearch.Location = new System.Drawing.Point(12, 47);
+            this.textBoxSearch.Location = new System.Drawing.Point(62, 48);
             this.textBoxSearch.Name = "textBoxSearch";
             this.textBoxSearch.Size = new System.Drawing.Size(160, 20);
             this.textBoxSearch.TabIndex = 2;
             this.textBoxSearch.Text = "Search";
+            this.textBoxSearch.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBoxSearch_KeyUp);
             // 
             // pictureBoxCoverArt
             // 
             this.pictureBoxCoverArt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBoxCoverArt.Location = new System.Drawing.Point(576, 82);
+            this.pictureBoxCoverArt.Location = new System.Drawing.Point(578, 82);
             this.pictureBoxCoverArt.Name = "pictureBoxCoverArt";
             this.pictureBoxCoverArt.Size = new System.Drawing.Size(199, 150);
             this.pictureBoxCoverArt.TabIndex = 3;
@@ -154,7 +146,9 @@
             "--Microsoft--",
             "Xbox",
             "Xbox 360",
-            "Xbox One"});
+            "Xbox One",
+            "",
+            "PC"});
             this.comboBoxSystem.Location = new System.Drawing.Point(309, 47);
             this.comboBoxSystem.MaxDropDownItems = 5;
             this.comboBoxSystem.Name = "comboBoxSystem";
@@ -178,6 +172,12 @@
             this.menuItemFile.Size = new System.Drawing.Size(37, 20);
             this.menuItemFile.Text = "File";
             // 
+            // menuItemExit
+            // 
+            this.menuItemExit.Name = "menuItemExit";
+            this.menuItemExit.Size = new System.Drawing.Size(92, 22);
+            this.menuItemExit.Text = "Exit";
+            // 
             // buttonManageCollection
             // 
             this.buttonManageCollection.Location = new System.Drawing.Point(441, 46);
@@ -197,23 +197,26 @@
             this.labelSystem.TabIndex = 7;
             this.labelSystem.Text = "System:";
             // 
-            // menuItemExit
+            // labelSearch
             // 
-            this.menuItemExit.Name = "menuItemExit";
-            this.menuItemExit.Size = new System.Drawing.Size(152, 22);
-            this.menuItemExit.Text = "Exit";
+            this.labelSearch.AutoSize = true;
+            this.labelSearch.Location = new System.Drawing.Point(12, 51);
+            this.labelSearch.Name = "labelSearch";
+            this.labelSearch.Size = new System.Drawing.Size(44, 13);
+            this.labelSearch.TabIndex = 8;
+            this.labelSearch.Text = "Search:";
             // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(785, 452);
+            this.Controls.Add(this.labelSearch);
             this.Controls.Add(this.labelSystem);
             this.Controls.Add(this.buttonManageCollection);
             this.Controls.Add(this.comboBoxSystem);
             this.Controls.Add(this.pictureBoxCoverArt);
             this.Controls.Add(this.textBoxSearch);
-            this.Controls.Add(this.buttonSearch);
             this.Controls.Add(this.dataGridViewItems);
             this.Controls.Add(this.menuStripMain);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
@@ -236,7 +239,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn columnGame;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnSystem;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnYear;
-        private System.Windows.Forms.Button buttonSearch;
         private System.Windows.Forms.TextBox textBoxSearch;
         private System.Windows.Forms.PictureBox pictureBoxCoverArt;
         private System.Windows.Forms.ComboBox comboBoxSystem;
@@ -245,6 +247,7 @@
         private System.Windows.Forms.Button buttonManageCollection;
         private System.Windows.Forms.Label labelSystem;
         private System.Windows.Forms.ToolStripMenuItem menuItemExit;
+        private System.Windows.Forms.Label labelSearch;
     }
 }
 

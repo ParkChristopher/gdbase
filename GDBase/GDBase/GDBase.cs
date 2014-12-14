@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -15,6 +16,7 @@ namespace GDBase
         private DatabaseManager _database;
         private List<A_Component> _itemRemovals;
         private List<A_Component> _itemList;
+        private List<A_Component> _masterList;
         
         public FormMain()
         {
@@ -23,14 +25,19 @@ namespace GDBase
             _database = new DatabaseManager();
             _itemList = new List<A_Component>();
             _itemRemovals = new List<A_Component>();
+            _masterList = new List<A_Component>();
 
-            _itemList.AddRange(loadStoredItems());
-            updateGridView();
+            _masterList.AddRange(loadStoredItems());
+            _itemList.AddRange(_masterList);
+            updateGridView(_itemList);
         }
+
+        public List<A_Component> Master
+        { get { return _masterList; } }
 
         public List<A_Component> Items
         {
-            get { return _itemList; }    
+            get { return _itemList; }  
         }
 
         public List<A_Component> Removals
@@ -38,10 +45,10 @@ namespace GDBase
             get { return _itemRemovals; }
         }
 
-        public void updateGridView()
+        public void updateGridView(List<A_Component> list)
         {
             dataGridViewItems.Rows.Clear();
-            foreach (A_Component item in _itemList)
+            foreach (A_Component item in list)
                 dataGridViewItems.Rows.Add(item.Name, item.System, item.Year);
         }
 
@@ -59,7 +66,20 @@ namespace GDBase
 
         private void FormMain_FormClosing(object sender, FormClosingEventArgs e)
         {
-            _database.updateInventory(_itemList, _itemRemovals);
+            _database.updateInventory(_masterList, _itemRemovals);
         }
+
+        private void textBoxSearch_KeyUp(object sender, KeyEventArgs e)
+        {
+            List<A_Component> tempList = new List<A_Component>();
+            Regex pattern = new Regex("(" + textBoxSearch.Text.ToLower() + ")");
+
+            foreach (A_Component item in _itemList)
+                if (pattern.IsMatch(item.Name.ToLower()))
+                    tempList.Add(item);
+            
+            updateGridView(tempList);
+        }
+
     }
 }

@@ -30,12 +30,14 @@
         {
             this.tabManage = new System.Windows.Forms.TabControl();
             this.tabAdd = new System.Windows.Forms.TabPage();
+            this.comboBoxSystemAdd = new System.Windows.Forms.ComboBox();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.labelOwned = new System.Windows.Forms.Label();
             this.textBoxYearAdd = new System.Windows.Forms.TextBox();
             this.labelYearAdd = new System.Windows.Forms.Label();
             this.textBoxNameAdd = new System.Windows.Forms.TextBox();
-            this.textBoxSystemAdd = new System.Windows.Forms.TextBox();
             this.buttonAdd = new System.Windows.Forms.Button();
-            this.labelSystem = new System.Windows.Forms.Label();
+            this.labelSystemAdd = new System.Windows.Forms.Label();
             this.labelNameAdd = new System.Windows.Forms.Label();
             this.tabRemove = new System.Windows.Forms.TabPage();
             this.dataGridViewRemoveList = new System.Windows.Forms.DataGridView();
@@ -46,6 +48,7 @@
             this.buttonClose = new System.Windows.Forms.Button();
             this.tabManage.SuspendLayout();
             this.tabAdd.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.tabRemove.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRemoveList)).BeginInit();
             this.SuspendLayout();
@@ -64,12 +67,14 @@
             // 
             // tabAdd
             // 
+            this.tabAdd.Controls.Add(this.comboBoxSystemAdd);
+            this.tabAdd.Controls.Add(this.numericUpDown1);
+            this.tabAdd.Controls.Add(this.labelOwned);
             this.tabAdd.Controls.Add(this.textBoxYearAdd);
             this.tabAdd.Controls.Add(this.labelYearAdd);
             this.tabAdd.Controls.Add(this.textBoxNameAdd);
-            this.tabAdd.Controls.Add(this.textBoxSystemAdd);
             this.tabAdd.Controls.Add(this.buttonAdd);
-            this.tabAdd.Controls.Add(this.labelSystem);
+            this.tabAdd.Controls.Add(this.labelSystemAdd);
             this.tabAdd.Controls.Add(this.labelNameAdd);
             this.tabAdd.Location = new System.Drawing.Point(4, 22);
             this.tabAdd.Name = "tabAdd";
@@ -79,11 +84,72 @@
             this.tabAdd.Text = "Add";
             this.tabAdd.UseVisualStyleBackColor = true;
             // 
+            // comboBoxSystemAdd
+            // 
+            this.comboBoxSystemAdd.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxSystemAdd.FormattingEnabled = true;
+            this.comboBoxSystemAdd.Items.AddRange(new object[] {
+            "All",
+            "",
+            "--Nintendo--",
+            "Nes",
+            "Snes",
+            "N64",
+            "Gamecube",
+            "Wii",
+            "Wii U",
+            "Game Boy",
+            "Game Boy Color",
+            "Game Boy Advance",
+            "DS",
+            "3DS",
+            "Virtual Boy",
+            "",
+            "--Sega--",
+            "Master System",
+            "Genesis",
+            "Saturn",
+            "Dreamcast",
+            "",
+            "--Sony--",
+            "Playstation",
+            "Playstation 2",
+            "Playstation 3",
+            "PSP",
+            "PS Vita",
+            "",
+            "--Microsoft--",
+            "Xbox",
+            "Xbox 360",
+            "Xbox One",
+            "",
+            "PC"});
+            this.comboBoxSystemAdd.Location = new System.Drawing.Point(267, 31);
+            this.comboBoxSystemAdd.Name = "comboBoxSystemAdd";
+            this.comboBoxSystemAdd.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxSystemAdd.TabIndex = 9;
+            // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.Location = new System.Drawing.Point(88, 77);
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(47, 20);
+            this.numericUpDown1.TabIndex = 8;
+            // 
+            // labelOwned
+            // 
+            this.labelOwned.AutoSize = true;
+            this.labelOwned.Location = new System.Drawing.Point(85, 60);
+            this.labelOwned.Name = "labelOwned";
+            this.labelOwned.Size = new System.Drawing.Size(41, 13);
+            this.labelOwned.TabIndex = 7;
+            this.labelOwned.Text = "Owned";
+            // 
             // textBoxYearAdd
             // 
-            this.textBoxYearAdd.Location = new System.Drawing.Point(16, 76);
+            this.textBoxYearAdd.Location = new System.Drawing.Point(16, 77);
             this.textBoxYearAdd.Name = "textBoxYearAdd";
-            this.textBoxYearAdd.Size = new System.Drawing.Size(79, 20);
+            this.textBoxYearAdd.Size = new System.Drawing.Size(52, 20);
             this.textBoxYearAdd.TabIndex = 6;
             this.textBoxYearAdd.Text = "Year";
             // 
@@ -104,17 +170,9 @@
             this.textBoxNameAdd.TabIndex = 1;
             this.textBoxNameAdd.Text = "Name";
             // 
-            // textBoxSystemAdd
-            // 
-            this.textBoxSystemAdd.Location = new System.Drawing.Point(269, 32);
-            this.textBoxSystemAdd.Name = "textBoxSystemAdd";
-            this.textBoxSystemAdd.Size = new System.Drawing.Size(235, 20);
-            this.textBoxSystemAdd.TabIndex = 4;
-            this.textBoxSystemAdd.Text = "System";
-            // 
             // buttonAdd
             // 
-            this.buttonAdd.Location = new System.Drawing.Point(176, 74);
+            this.buttonAdd.Location = new System.Drawing.Point(176, 75);
             this.buttonAdd.Name = "buttonAdd";
             this.buttonAdd.Size = new System.Drawing.Size(75, 23);
             this.buttonAdd.TabIndex = 0;
@@ -122,14 +180,14 @@
             this.buttonAdd.UseVisualStyleBackColor = true;
             this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
             // 
-            // labelSystem
+            // labelSystemAdd
             // 
-            this.labelSystem.AutoSize = true;
-            this.labelSystem.Location = new System.Drawing.Point(266, 16);
-            this.labelSystem.Name = "labelSystem";
-            this.labelSystem.Size = new System.Drawing.Size(41, 13);
-            this.labelSystem.TabIndex = 3;
-            this.labelSystem.Text = "System";
+            this.labelSystemAdd.AutoSize = true;
+            this.labelSystemAdd.Location = new System.Drawing.Point(264, 15);
+            this.labelSystemAdd.Name = "labelSystemAdd";
+            this.labelSystemAdd.Size = new System.Drawing.Size(41, 13);
+            this.labelSystemAdd.TabIndex = 3;
+            this.labelSystemAdd.Text = "System";
             // 
             // labelNameAdd
             // 
@@ -226,6 +284,7 @@
             this.tabManage.ResumeLayout(false);
             this.tabAdd.ResumeLayout(false);
             this.tabAdd.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.tabRemove.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRemoveList)).EndInit();
             this.ResumeLayout(false);
@@ -239,8 +298,7 @@
         private System.Windows.Forms.Button buttonClose;
         private System.Windows.Forms.TextBox textBoxYearAdd;
         private System.Windows.Forms.Label labelYearAdd;
-        private System.Windows.Forms.TextBox textBoxSystemAdd;
-        private System.Windows.Forms.Label labelSystem;
+        private System.Windows.Forms.Label labelSystemAdd;
         private System.Windows.Forms.Label labelNameAdd;
         private System.Windows.Forms.TextBox textBoxNameAdd;
         private System.Windows.Forms.Button buttonAdd;
@@ -250,5 +308,8 @@
         private System.Windows.Forms.Button buttonRemove;
         private System.Windows.Forms.DataGridView dataGridViewRemoveList;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnName;
+        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.Label labelOwned;
+        private System.Windows.Forms.ComboBox comboBoxSystemAdd;
     }
 }
