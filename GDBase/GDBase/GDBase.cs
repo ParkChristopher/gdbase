@@ -54,9 +54,9 @@ namespace GDBase
 
         private void buttonManageCollection_Click(object sender, EventArgs e)
         {
-            ManageCollection manageCollection = new ManageCollection(this);
-            manageCollection.Owner = this;
-            manageCollection.ShowDialog();
+            CollectionManager collectionDialog = new CollectionManager(this);
+            collectionDialog.Owner = this;
+            collectionDialog.ShowDialog();
         }
 
         private List<A_Component> loadStoredItems()

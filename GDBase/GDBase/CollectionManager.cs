@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,14 +11,17 @@ using System.Windows.Forms;
 
 namespace GDBase
 {
-    public partial class ManageCollection : Form
+    public partial class CollectionManager : Form
     {
         private FormMain _parent;
+        private Bitmap _imgPreview;
 
-        public ManageCollection(FormMain parent)
+        public CollectionManager(FormMain parent)
         {
             InitializeComponent();
             _parent = parent;
+            _imgPreview = new Bitmap(global::GDBase.Properties.Resources.imgStockImg);
+            pictureBoxPreview.Image = _imgPreview;
         }
 
         public void updateGridView()
@@ -38,9 +42,46 @@ namespace GDBase
 
         private void buttonAdd_Click(object sender, EventArgs e)
         {
-            //Note: Descern item to add here later
-            addItem(new Game(textBoxNameAdd.Text, comboBoxSystemAdd.Text,
-                Convert.ToInt32(textBoxYearAdd.Text)));
+            //Add cover path as 4th argument
+
+
+            addItem(new Game(textBoxNameAdd.Text,
+                comboBoxSystemAdd.Text,
+                Convert.ToInt32(textBoxYearAdd.Text),
+                ""));
+        }
+
+        private void buttonBrowse_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog fileDialog = new OpenFileDialog();
+            DialogResult result;
+            string filePath;
+
+            fileDialog.Filter = "JPEG Files (.jpg)|*.jpg|PNG Files (.png)|*.png|All Files (*.*)|*.*";
+            fileDialog.FilterIndex = 1;
+            result = fileDialog.ShowDialog(this);
+
+
+            if (result == DialogResult.OK)
+            {
+                 
+                filePath = Path.GetFullPath(fileDialog.SafeFileName);
+                textBoxCoverAdd.Text = filePath;
+                try
+                {
+                    //Need to save file to project directory and then get its file
+                    //path, then load it.
+                    //Bitmap coverArt = new Bitmap(fileDialog.OpenFile());
+                    //Bitmap coverArt = new Bitmap(fileDialog.FileName);
+                    Bitmap coverArt = (Bitmap)Bitmap.FromFile(filePath);
+                    pictureBoxPreview.Image = coverArt; 
+                
+                }
+                catch (Exception exptn)
+                {
+                    MessageBox.Show("Failed to open image file.");
+                }
+            }
         }
 
         private void addItem(A_Component item)
@@ -98,6 +139,16 @@ namespace GDBase
             this.Hide();
             this.Owner.Focus();
             this.Dispose();
+        }
+
+        //private void label1_Click(object sender, EventArgs e)
+        //{
+
+        //}
+
+        private void textBoxPhotoAdd_TextChanged(object sender, EventArgs e)
+        {
+
         }
 
         

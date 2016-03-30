@@ -33,7 +33,6 @@
             this.columnSystem = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnYear = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.textBoxSearch = new System.Windows.Forms.TextBox();
-            this.pictureBoxCoverArt = new System.Windows.Forms.PictureBox();
             this.comboBoxSystem = new System.Windows.Forms.ComboBox();
             this.menuStripMain = new System.Windows.Forms.MenuStrip();
             this.menuItemFile = new System.Windows.Forms.ToolStripMenuItem();
@@ -41,9 +40,10 @@
             this.buttonManageCollection = new System.Windows.Forms.Button();
             this.labelSystem = new System.Windows.Forms.Label();
             this.labelSearch = new System.Windows.Forms.Label();
+            this.pictureBoxCoverArt = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewItems)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCoverArt)).BeginInit();
             this.menuStripMain.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCoverArt)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridViewItems
@@ -57,11 +57,11 @@
             this.columnGame,
             this.columnSystem,
             this.columnYear});
-            this.dataGridViewItems.Location = new System.Drawing.Point(12, 82);
+            this.dataGridViewItems.Location = new System.Drawing.Point(12, 64);
             this.dataGridViewItems.Name = "dataGridViewItems";
             this.dataGridViewItems.ReadOnly = true;
             this.dataGridViewItems.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewItems.Size = new System.Drawing.Size(558, 358);
+            this.dataGridViewItems.Size = new System.Drawing.Size(622, 485);
             this.dataGridViewItems.TabIndex = 0;
             // 
             // columnGame
@@ -91,21 +91,12 @@
             // 
             // textBoxSearch
             // 
-            this.textBoxSearch.Location = new System.Drawing.Point(62, 48);
+            this.textBoxSearch.Location = new System.Drawing.Point(62, 37);
             this.textBoxSearch.Name = "textBoxSearch";
             this.textBoxSearch.Size = new System.Drawing.Size(160, 20);
             this.textBoxSearch.TabIndex = 2;
             this.textBoxSearch.Text = "Search";
             this.textBoxSearch.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBoxSearch_KeyUp);
-            // 
-            // pictureBoxCoverArt
-            // 
-            this.pictureBoxCoverArt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBoxCoverArt.Location = new System.Drawing.Point(578, 82);
-            this.pictureBoxCoverArt.Name = "pictureBoxCoverArt";
-            this.pictureBoxCoverArt.Size = new System.Drawing.Size(199, 150);
-            this.pictureBoxCoverArt.TabIndex = 3;
-            this.pictureBoxCoverArt.TabStop = false;
             // 
             // comboBoxSystem
             // 
@@ -149,7 +140,7 @@
             "Xbox One",
             "",
             "PC"});
-            this.comboBoxSystem.Location = new System.Drawing.Point(309, 47);
+            this.comboBoxSystem.Location = new System.Drawing.Point(309, 36);
             this.comboBoxSystem.MaxDropDownItems = 5;
             this.comboBoxSystem.Name = "comboBoxSystem";
             this.comboBoxSystem.Size = new System.Drawing.Size(121, 21);
@@ -161,7 +152,7 @@
             this.menuItemFile});
             this.menuStripMain.Location = new System.Drawing.Point(0, 0);
             this.menuStripMain.Name = "menuStripMain";
-            this.menuStripMain.Size = new System.Drawing.Size(785, 24);
+            this.menuStripMain.Size = new System.Drawing.Size(1008, 24);
             this.menuStripMain.TabIndex = 5;
             // 
             // menuItemFile
@@ -180,7 +171,7 @@
             // 
             // buttonManageCollection
             // 
-            this.buttonManageCollection.Location = new System.Drawing.Point(441, 46);
+            this.buttonManageCollection.Location = new System.Drawing.Point(441, 35);
             this.buttonManageCollection.Name = "buttonManageCollection";
             this.buttonManageCollection.Size = new System.Drawing.Size(129, 23);
             this.buttonManageCollection.TabIndex = 6;
@@ -191,7 +182,7 @@
             // labelSystem
             // 
             this.labelSystem.AutoSize = true;
-            this.labelSystem.Location = new System.Drawing.Point(262, 50);
+            this.labelSystem.Location = new System.Drawing.Point(262, 39);
             this.labelSystem.Name = "labelSystem";
             this.labelSystem.Size = new System.Drawing.Size(44, 13);
             this.labelSystem.TabIndex = 7;
@@ -200,17 +191,28 @@
             // labelSearch
             // 
             this.labelSearch.AutoSize = true;
-            this.labelSearch.Location = new System.Drawing.Point(12, 51);
+            this.labelSearch.Location = new System.Drawing.Point(12, 40);
             this.labelSearch.Name = "labelSearch";
             this.labelSearch.Size = new System.Drawing.Size(44, 13);
             this.labelSearch.TabIndex = 8;
             this.labelSearch.Text = "Search:";
             // 
+            // pictureBoxCoverArt
+            // 
+            this.pictureBoxCoverArt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBoxCoverArt.ErrorImage = null;
+            this.pictureBoxCoverArt.Image = global::GDBase.Properties.Resources.imgStockImg;
+            this.pictureBoxCoverArt.Location = new System.Drawing.Point(640, 64);
+            this.pictureBoxCoverArt.Name = "pictureBoxCoverArt";
+            this.pictureBoxCoverArt.Size = new System.Drawing.Size(360, 220);
+            this.pictureBoxCoverArt.TabIndex = 3;
+            this.pictureBoxCoverArt.TabStop = false;
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(785, 452);
+            this.ClientSize = new System.Drawing.Size(1008, 561);
             this.Controls.Add(this.labelSearch);
             this.Controls.Add(this.labelSystem);
             this.Controls.Add(this.buttonManageCollection);
@@ -225,9 +227,9 @@
             this.Text = "GDBase";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormMain_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewItems)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCoverArt)).EndInit();
             this.menuStripMain.ResumeLayout(false);
             this.menuStripMain.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCoverArt)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

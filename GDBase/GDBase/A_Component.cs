@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Drawing;
 
 namespace GDBase
 {
@@ -11,13 +12,16 @@ namespace GDBase
         private string _name;
         private string _system;
         private int _year;
+        private String _coverPath;
 
 
-        public A_Component(string name, string system, int year)
+
+        public A_Component(string name, string system, int year, string cover)
         {
             _name = name;
             _system = system;
             _year = year;
+            _coverPath = cover;
         }
 
         public string Name
@@ -36,6 +40,12 @@ namespace GDBase
         {
             get { return _year; }
             set { _year = value; }
+        }
+
+        public String CoverPath
+        {
+            get { return _coverPath;  }
+            set { _coverPath = value; }
         }
         
     }

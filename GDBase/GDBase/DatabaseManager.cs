@@ -35,7 +35,7 @@ namespace GDBase
             foreach (A_Component item in updates)
             {
                 validateObject(item);
-                add(item.Name, item.System, item.Year);
+                add(item.Name, item.System, item.Year, item.CoverPath);
             }
 
             foreach (A_Component item in removals)
@@ -45,10 +45,10 @@ namespace GDBase
             }
         }
 
-        private void add(string name, string system, int year)
+        private void add(string name, string system, int year, string coverPath)
         {
-            string query = "INSERT OR IGNORE INTO Games (Name, System, Year)"
-                + "VALUES (@name, @system, @year);";
+            string query = "INSERT OR IGNORE INTO Games (Name, System, Year, CoverPath)"
+                + "VALUES (@name, @system, @year, @coverpath);";
 
             setConnection();
             _connection.Open();
@@ -58,7 +58,8 @@ namespace GDBase
             _command.Parameters.AddWithValue("@name", name);
             _command.Parameters.AddWithValue("@system", system);
             _command.Parameters.AddWithValue("@year", year);
-            
+            _command.Parameters.AddWithValue("@coverpath", coverPath);
+
             _command.ExecuteNonQuery();
             _connection.Close();
         }
@@ -105,7 +106,7 @@ namespace GDBase
                 }
                 
                 list.Add(new Game((string)data[0], (string)data[1],
-                    (int)data[2]));
+                    (int)data[2], "") );
             }
 
             return list;
@@ -115,6 +116,7 @@ namespace GDBase
         {
             _connection = new SQLiteConnection(_connectPath);
         }
+
         private void executeQuery(string text)
         {
             setConnection();
@@ -130,7 +132,8 @@ namespace GDBase
             string table = "CREATE TABLE IF NOT EXISTS Games ("
                 + "Name VARCHAR(100) PRIMARY KEY NOT NULL,"
                 + "System VARCHAR(100) NOT NULL,"
-                + "Year INT);";
+                + "Year INT NOT NULL,"
+                + "CoverPath VARCHAR(100) NOT NULL);";
 
             executeQuery(table);
         }

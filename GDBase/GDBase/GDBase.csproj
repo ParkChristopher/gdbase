@@ -74,19 +74,19 @@
     <Compile Include="GDBase.Designer.cs">
       <DependentUpon>GDBase.cs</DependentUpon>
     </Compile>
-    <Compile Include="ManageCollection.cs">
+    <Compile Include="CollectionManager.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ManageCollection.Designer.cs">
-      <DependentUpon>ManageCollection.cs</DependentUpon>
+    <Compile Include="CollectionManager.Designer.cs">
+      <DependentUpon>CollectionManager.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="GDBase.resx">
       <DependentUpon>GDBase.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ManageCollection.resx">
-      <DependentUpon>ManageCollection.cs</DependentUpon>
+    <EmbeddedResource Include="CollectionManager.resx">
+      <DependentUpon>CollectionManager.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -96,6 +96,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -109,6 +110,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imgStockPhoto.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imgStockImage.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\stockImage.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imgStockImg.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -1,6 +1,6 @@
 ﻿namespace GDBase
 {
-    partial class ManageCollection
+    partial class CollectionManager
     {
         /// <summary>
         /// Required designer variable.
@@ -30,6 +30,11 @@
         {
             this.tabManage = new System.Windows.Forms.TabControl();
             this.tabAdd = new System.Windows.Forms.TabPage();
+            this.labelPreview = new System.Windows.Forms.Label();
+            this.pictureBoxPreview = new System.Windows.Forms.PictureBox();
+            this.buttonBrowse = new System.Windows.Forms.Button();
+            this.labelCover = new System.Windows.Forms.Label();
+            this.textBoxCoverAdd = new System.Windows.Forms.TextBox();
             this.comboBoxSystemAdd = new System.Windows.Forms.ComboBox();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.labelOwned = new System.Windows.Forms.Label();
@@ -48,6 +53,7 @@
             this.buttonClose = new System.Windows.Forms.Button();
             this.tabManage.SuspendLayout();
             this.tabAdd.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPreview)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.tabRemove.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRemoveList)).BeginInit();
@@ -67,6 +73,11 @@
             // 
             // tabAdd
             // 
+            this.tabAdd.Controls.Add(this.labelPreview);
+            this.tabAdd.Controls.Add(this.pictureBoxPreview);
+            this.tabAdd.Controls.Add(this.buttonBrowse);
+            this.tabAdd.Controls.Add(this.labelCover);
+            this.tabAdd.Controls.Add(this.textBoxCoverAdd);
             this.tabAdd.Controls.Add(this.comboBoxSystemAdd);
             this.tabAdd.Controls.Add(this.numericUpDown1);
             this.tabAdd.Controls.Add(this.labelOwned);
@@ -83,6 +94,52 @@
             this.tabAdd.TabIndex = 0;
             this.tabAdd.Text = "Add";
             this.tabAdd.UseVisualStyleBackColor = true;
+            // 
+            // labelPreview
+            // 
+            this.labelPreview.AutoSize = true;
+            this.labelPreview.Location = new System.Drawing.Point(13, 155);
+            this.labelPreview.Name = "labelPreview";
+            this.labelPreview.Size = new System.Drawing.Size(45, 13);
+            this.labelPreview.TabIndex = 14;
+            this.labelPreview.Text = "Preview";
+            // 
+            // pictureBoxPreview
+            // 
+            this.pictureBoxPreview.Location = new System.Drawing.Point(16, 171);
+            this.pictureBoxPreview.Name = "pictureBoxPreview";
+            this.pictureBoxPreview.Size = new System.Drawing.Size(150, 100);
+            this.pictureBoxPreview.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxPreview.TabIndex = 13;
+            this.pictureBoxPreview.TabStop = false;
+            // 
+            // buttonBrowse
+            // 
+            this.buttonBrowse.Location = new System.Drawing.Point(267, 122);
+            this.buttonBrowse.Name = "buttonBrowse";
+            this.buttonBrowse.Size = new System.Drawing.Size(75, 23);
+            this.buttonBrowse.TabIndex = 12;
+            this.buttonBrowse.Text = "Browse";
+            this.buttonBrowse.UseVisualStyleBackColor = true;
+            this.buttonBrowse.Click += new System.EventHandler(this.buttonBrowse_Click);
+            // 
+            // labelCover
+            // 
+            this.labelCover.AutoSize = true;
+            this.labelCover.Location = new System.Drawing.Point(13, 108);
+            this.labelCover.Name = "labelCover";
+            this.labelCover.Size = new System.Drawing.Size(35, 13);
+            this.labelCover.TabIndex = 11;
+            this.labelCover.Text = "Cover";
+            // 
+            // textBoxCoverAdd
+            // 
+            this.textBoxCoverAdd.Location = new System.Drawing.Point(16, 124);
+            this.textBoxCoverAdd.Name = "textBoxCoverAdd";
+            this.textBoxCoverAdd.ReadOnly = true;
+            this.textBoxCoverAdd.Size = new System.Drawing.Size(235, 20);
+            this.textBoxCoverAdd.TabIndex = 10;
+            this.textBoxCoverAdd.TextChanged += new System.EventHandler(this.textBoxPhotoAdd_TextChanged);
             // 
             // comboBoxSystemAdd
             // 
@@ -269,7 +326,7 @@
             this.buttonClose.UseVisualStyleBackColor = true;
             this.buttonClose.Click += new System.EventHandler(this.buttonClose_Click);
             // 
-            // ManageCollection
+            // CollectionManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -277,13 +334,14 @@
             this.Controls.Add(this.buttonClose);
             this.Controls.Add(this.tabManage);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Name = "ManageCollection";
+            this.Name = "CollectionManager";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "ManageCollection";
             this.tabManage.ResumeLayout(false);
             this.tabAdd.ResumeLayout(false);
             this.tabAdd.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPreview)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.tabRemove.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRemoveList)).EndInit();
@@ -311,5 +369,10 @@
         private System.Windows.Forms.NumericUpDown numericUpDown1;
         private System.Windows.Forms.Label labelOwned;
         private System.Windows.Forms.ComboBox comboBoxSystemAdd;
+        private System.Windows.Forms.Label labelCover;
+        private System.Windows.Forms.TextBox textBoxCoverAdd;
+        private System.Windows.Forms.Button buttonBrowse;
+        private System.Windows.Forms.Label labelPreview;
+        private System.Windows.Forms.PictureBox pictureBoxPreview;
     }
 }
